@@ -54,6 +54,10 @@
                             <input type="text" placeholder="Exact Citation Snippet" value="" name="cite.target" />
                             <input type="text" placeholder="Message Response" value="" name="cite.message" />
                             <label>Is it wrong? <input type="checkbox" name="cite.is_error" /></label>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <label>Make Italic? <input type="checkbox" name="cite.is_italic" /></label>
                         </div>
                     </div>
                     

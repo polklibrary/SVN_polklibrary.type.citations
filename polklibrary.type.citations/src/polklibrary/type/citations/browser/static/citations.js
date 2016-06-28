@@ -41,7 +41,7 @@ var Citations = {
                 $('#citation-help').html($(this).data('message')).show();
                 if ($(this).data('wrong') && !$(this).data('found')) {
                     self.found_errors++;
-                    $(this).attr('data-found', true);
+                    $(this).data('found', true).attr('data-found', true);
                     $('#finished').val('I found ' + self.found_errors + ' mistakes.')
                     if (self.found_errors == 1)
                         $('#finished').val('I found ' + self.found_errors + ' mistake.')
@@ -60,6 +60,7 @@ var Citations = {
             var s = $('<span>').addClass('pat-citation').html(o.target)
                 .attr('data-wrong', o.is_error)
                 .attr('data-found', false)
+                .attr('data-is_italic', o.is_italic)
                 .attr('data-message', o.message);
             this.citation = this.citation.replace(o.target, $(s).prop('outerHTML'));
             if (o.is_error)

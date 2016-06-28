@@ -16,15 +16,16 @@ var CitationsEdit = {
     add_handler : function() {
         var self = this;
         $('#form-buttons-addsection').click(function(){
-            self.add_field(self.selected,'',false);
+            self.add_field(self.selected,'',false, false);
             self.selected = '';
         });
     },
     
-    add_field : function(snippet, message, is_wrong) {
+    add_field : function(snippet, message, is_wrong, is_italic) {
         $('#citation-template input[name="cite.target"]').val(snippet);
         $('#citation-template input[name="cite.message"]').val(message);
         $('#citation-template input[name="cite.is_error"]').prop('checked', is_wrong);
+        $('#citation-template input[name="cite.is_italic"]').prop('checked', is_italic);
         var html = $('#citation-template .dynamic-field').clone(true);
         $('#citation-template-section').append(html);
     }, 
@@ -34,7 +35,7 @@ var CitationsEdit = {
         $('input[name="cite.target"], input[name="cite.message"]').on('keyup', function(){
             self.update();
         });
-        $('input[name="cite.is_error"]').on('click', function(){
+        $('input[name="cite.is_error"], input[name="cite.is_italic"]').on('click', function(){
             self.update();
         });
     }, 
@@ -47,6 +48,7 @@ var CitationsEdit = {
                 'target': $(t).find('input[name="cite.target"]').val(),
                 'message': $(t).find('input[name="cite.message"]').val(),
                 'is_error': $(t).find('input[name="cite.is_error"]').is(':checked'),
+                'is_italic': $(t).find('input[name="cite.is_italic"]').is(':checked'),
             });
         });
     
