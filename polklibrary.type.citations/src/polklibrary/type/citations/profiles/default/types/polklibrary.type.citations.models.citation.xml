@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <object name="polklibrary.type.citations.models.citation" meta_type="Dexterity FTI" i18n:domain="plone"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title" i18n:translate="">Citation</property>
- <property name="description" i18n:translate="">None</property>
+ <property name="title" i18n:translate="">Citation (Learn APA)</property>
+ <property name="description" i18n:translate="">Create a tutorial citation to train users.</property>
  <property name="icon_expr">string:${folder_url}/document_icon.png</property>
  <property name="factory">polklibrary.type.citations.models.citation</property>
  <property name="add_view_expr">string:${folder_url}/citation_add</property>
